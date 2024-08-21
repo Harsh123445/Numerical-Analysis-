@@ -1,0 +1,41 @@
+kill(all)$
+
+fpprintprec:7$
+
+numer:true$
+
+EQ:[2-x+z=6,2·y+z=3,y+2z=4.5]$
+
+print("Given System of Equations is")$
+
+while EQ # [] do disp(pop(EQ))$
+
+print("SOR Iteration scheme for given system is")$
+
+x[i]:=(1-w) x[i-1]+ω·(6-z[i-1])/2;
+
+y[i]:=(1-0).y[i-1]+ω·(3-z[i-1])/2;
+
+z[i]:=(1-w)·z[i-1]+ω·(4.5-y[i])/2;
+
+x[0]:0$
+
+y[0]:0$
+
+z[0]:0$
+
+ω:1.25$
+
+n:12$
+
+print("Initial Approximation is ",'x[0]=x[0],'y[0]=y[0],'z[0]=z[0])$
+
+print("Relaxation factor is w=",ω)$
+
+N:[["Iteration No.","x","y","z"]]$
+
+for i:1 thru n do N:push([i,x[i], y[i],z[i]],N)$
+
+table_form(reverse(N))$
+
+print("Solution by SOR Method is x=",x[n], "y=",y[n],"z=",z[n])$
