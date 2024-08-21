@@ -1,0 +1,15 @@
+kill(all)$
+numer:true$
+fpprintprec:7$
+f(x):=given f(x)$
+a: lower limit of the interval$
+b: upper limit of the interval $
+x[i]:=(a+b)/2$
+n: no. of iterations$
+print(“Given equation is”,f(x)=0)$
+print(“Given interval is (“,a, “,”,b,”)”)$
+N:[[“Iteration No.”,”Approximate root x”, “f(x)”]]$
+for i:1 thru n do (block(if f(a)*f(x[i])<0 then b:x[i]
+ elseif f(b)*f(x[i])<0 then a:x[i]),N:push([i,x[i],f(x[i])],N))$
+table_form(reverse(N))$
+print(“Approximate root by Bisection Method is x=”,x[n])$
