@@ -1,0 +1,25 @@
+kill(all)$
+
+load("interpol")$
+
+X:[4,5,7,10,11,13]$
+
+Y:[48,100,294, 900,1210,2028]$
+
+L:makelist([X[i],Y[i]],i,1,length(X))$
+
+f:expand(lagrange(L))$
+
+print("Given Table of Values is")$
+
+X:push("x",X)$
+
+Y:push("y",Y)$
+
+table_form([X,Y])$
+
+print("Lagrange Polynomial is f(x)=",f)$
+
+print("f(8)=",at(f,x=8))$
+
+print("f(15)=",at(f,x=15))$
