@@ -1,0 +1,29 @@
+kill(all)$
+
+fpprintprec:7$
+
+define(f(x), LHS of given equation)$
+
+define(g(x),x-f(x)/diff(f(x),x))$
+
+x[0]:given initial root x0$
+
+x[i]:=float(g(x[i-1]))$
+
+i:1$
+
+accuracy:0.00001$
+
+print(“Given equation is”,f(x)=0)$
+
+print(“Initial Approximation is “,’x[0]=x[0])$
+
+N:[[“Iteration No.”,”Approximate root x”,”f(x)”]]$
+
+block(loop,N:push([i,x[i],f(x[i])],N),
+
+ if abs(x[i]-x[i-1])<=accuracy then (table_form(reverse(N)),
+
+ print(“Approximate root by Newton’s Method is x=”,x[i]))
+
+else(i:i+1,go(loop)))$
